@@ -13,4 +13,7 @@ def _2(vrai: bool=True) -> str:
 					else:
 						if not(F):
 							print(x, y, z, w)
-_2(False)
+
+if __name__==__main__:
+	_2(False)
+
