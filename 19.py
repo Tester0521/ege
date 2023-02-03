@@ -45,7 +45,7 @@ def _21_1(mx, p, n1) -> int: return int((ceil(mx/p)-n1)/p-n1) if ((ceil(mx/p)-n1
 def _21_2(mx, p, n1, n2=0) -> int: return int((ceil(mx/p)-n1)/p-n1) if ((ceil(mx/p)-n1-n2)/p)*p**3 < mx \
 										else int((ceil(mx/p)-n1)-n2-n1)
 
-print('TESTS -->')
+'''print('TESTS -->')
 print('2 ДЕЙСТВИЯ >>')
 print('№28145')
 print(_19_1(94, 2, 1), end = '  ||  ')
@@ -63,6 +63,12 @@ print(_21_2(52, 2, 1, 4))
 print('№27848')
 print(_19_1(54, 2, 1, 3), end = '  ||  ')
 print(_20_3(54, 2, 1, 3), end = '  ||  ')
-print(_21_2(54, 2, 1, 3))
+print(_21_2(54, 2, 1, 3))'''
+
+
+# 27802-4
+print(_19_1(68, 5, 1, 4))
+print(_20_2(68, 5, 1, 4))
+print(_21_2(68, 5, 1, 4))
 
 
