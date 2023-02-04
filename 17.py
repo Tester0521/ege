@@ -1,7 +1,11 @@
 
 # print(_17v2())
 # print(len([[s[x]+s[y] for y in range(x, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]))
-def _17_300iq(s: list=[int(el) for el in open('./src/17.txt')]) -> list: return [len(f'{[[s[x]+s[y] for y in range(x+1, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]}'.replace('[', '').replace(']', '').replace(',', '').split()), max([int(el) for el in f'{[[s[x]+s[y] for y in range(x+1, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]}'.replace('[', '').replace(']', '').replace(',', '').split()])]
+def _17_300iq(s: list=[int(el) for el in open('./src/17.txt')]) -> list: \
+return [len(f'{[[s[x]+s[y] for y in range(x+1, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]}'\
+.replace('[', '').replace(']', '').replace(',', '').split()), max([int(el) for el in \
+f'{[[s[x]+s[y] for y in range(x+1, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]}'\
+.replace('[', '').replace(']', '').replace(',', '').split()])]
 
 print(_17_300iq())
 
