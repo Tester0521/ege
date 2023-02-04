@@ -1,3 +1,5 @@
+from itertools import product as pr
+
 def _2(vrai: bool=True) -> str:
 
 	print("x y z w")
@@ -13,6 +15,8 @@ def _2(vrai: bool=True) -> str:
 					else:
 						if not(F):
 							print(x, y, z, w)
+
+print('300iq ->\n' + 'x y z w\n' + ''.join([f'{x} {y} {z} {w}\n' for x, y, z, w in pr('01', repeat=4) if ((w <= x) and ((y <= z) == (x <= y)))]))
 
 if __name__==__main__:
 	_2(False)
