@@ -1,13 +1,24 @@
 
-# print(_17v2())
-# print(len([[s[x]+s[y] for y in range(x, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]))
+
 def _17_300iq(s: list=[int(el) for el in open('./src/17.txt')]) -> list: \
-return [len(f'{[[s[x]+s[y] for y in range(x+1, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]}'\
-.replace('[', '').replace(']', '').replace(',', '').split()), max([int(el) for el in \
-f'{[[s[x]+s[y] for y in range(x+1, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]}'\
-.replace('[', '').replace(']', '').replace(',', '').split()])]
+return [len(f'{[[x+y for y in s[xi+1:] if (x-y)%2==0 and (x%19==0 or y%19==0)] for xi,x in enumerate(s[:-1])]}'\
+.replace('[','').replace(']','').replace(',','').split()),max([int(el) for el in \
+f'{[[x+y for y in s[xi+1:] if (x-y)%2==0 and (x%19==0 or y%19==0)] for xi,x in enumerate(s[:-1])]}'\
+.replace('[','').replace(']','').replace(',','').split()])]
 
 print(_17_300iq())
+
+
+def _17_normal(path: str = './src/17.txt', c = 0, m = 0) -> list:
+	s = [int(el) for el in open(path)]
+	for x, x1 in enumerate(s[:-1]):
+		for y, y1 in enumerate(s[x+1:]):
+			if (x1 - y1) % 2 == 0 and (x1 % 19 == 0 or y1 % 19 == 0):
+				c += 1
+				m = max(m, x1 + y1)
+	return [c, m]
+
+# print(_17_normal())
 
 
 
@@ -52,6 +63,9 @@ print(_17_300iq())
 ########################################################################################################################################
 ########################################################		МУСОР		############################################################
 ########################################################################################################################################
+
+# print(_17v2())
+# print(len([[s[x]+s[y] for y in range(x, len(s)) if (s[x] - s[y]) % 2 == 0 and (s[x] % 19 == 0 or s[y] % 19 == 0)] for x in range(len(s)-1)]))
 
 
 def _17(s: str = './src/17.txt') -> list: 
